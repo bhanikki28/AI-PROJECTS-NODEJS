@@ -18,5 +18,7 @@ const model = new ChatOpenAI({
 // define the promptTemplate
 
 const prompt = ChatPromptTemplate.fromTemplate('Please share interesting thing about place : {input}');
-
+const chain = prompt.pipe(model)
 console.log(await prompt.format({'input': 'Madurai'}));
+const response = chain.invoke()
+console.log(response)
