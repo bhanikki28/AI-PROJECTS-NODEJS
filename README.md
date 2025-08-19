@@ -52,3 +52,12 @@
         - streamLog
         
 ## prompt-template.js
+
+    - import ChatPromptTemplate and use fromTemplate method to pass in the query
+    - chain the prompt with model
+    - call chain.invoke()
+
+    const prompt = ChatPromptTemplate.fromTemplate('Please share interesting thing about place : {input}');
+    const chain = prompt.pipe(model)
+    const response = await chain.invoke({'input': 'Madurai'})
+
