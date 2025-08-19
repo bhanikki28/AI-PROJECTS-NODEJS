@@ -28,3 +28,27 @@
     2. Generate/Receive response using completion.choices[0].message.content
 
 
+## llm.js
+
+    1. import required library - import { ChatOpenAI } from @langchain/openai
+    2. Define the model 
+            const model = new ChatOpenAI({
+                model : "gpt-4o-mini",
+                openAIApiKey : OPENAI_API_KEY,
+                temperature : 0.7,
+                maxTokens : 50
+            })
+            - model : modelName
+            - temperature : to control the prediction
+            - maxToken : to limit the response ( cost)
+
+    Run the model - model.invoke();
+    const response = await model.invoke("Hello");
+
+    Model can be invoked through below options
+        - invoke
+        - batch
+        - stream
+        - streamLog
+        
+## prompt-template.js
