@@ -2,6 +2,8 @@
 
     npm init -y
 
+    Define Model -> Configure Prompt -> Create Chain -> Configure Parser -> Chain -> Invoke
+
 ## Required Libraries
 
     For API Fundamentals project
@@ -50,7 +52,7 @@
         - batch
         - stream
         - streamLog
-        
+
 ## prompt-template.js
 
     - import ChatPromptTemplate and use fromTemplate method to pass in the query
@@ -60,4 +62,10 @@
     const prompt = ChatPromptTemplate.fromTemplate('Please share interesting thing about place : {input}');
     const chain = prompt.pipe(model)
     const response = await chain.invoke({'input': 'Madurai'})
+
+## output-parsers.js
+
+    - String Output Parser
+    - chaing the prompt -> model -> parser via pipe
+    - langchain/core/output-parsers eg : StringOutputParser, CommaSeparatedListOutputParser
 
